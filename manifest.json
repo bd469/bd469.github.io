@@ -1,0 +1,44 @@
+[
+  {
+    "name": "ragdoll_paw",
+    "file": "ragdoll_paw.png",
+    "width": 636,
+    "height": 564
+  },
+  {
+    "name": "ragdoll_portrait",
+    "file": "ragdoll_portrait.png",
+    "width": 520,
+    "height": 636
+  },
+  {
+    "name": "gray_loaf",
+    "file": "gray_loaf.png",
+    "width": 456,
+    "height": 636
+  },
+  {
+    "name": "silver_closeup",
+    "file": "silver_closeup.png",
+    "width": 612,
+    "height": 636
+  },
+  {
+    "name": "silver_lounging",
+    "file": "silver_lounging.png",
+    "width": 636,
+    "height": 280
+  },
+  {
+    "name": "gray_mirror",
+    "file": "gray_mirror.png",
+    "width": 397,
+    "height": 635
+  },
+  {
+    "name": "silver_bed",
+    "file": "silver_bed.png",
+    "width": 480,
+    "height": 636
+  }
+]
