@@ -4,9 +4,9 @@
   const navigation = document.querySelector('.primary-nav');
   const menu = document.querySelector('.menu-toggle');
   const tabs = [...document.querySelectorAll('[data-view]')];
-  const baseTitle = 'Beixi (Chloe) Du';
+  const baseTitle = 'Beixi Du (Chloe)';
   const aliases = { resume: 'cv', education: 'cv', skills: 'cv', experience: 'financial-engineering', 'coinbase-project': 'financial-engineering' };
-  const titles = {about:'Research & Financial Engineering', publications:'Publications', research:'Research', 'financial-engineering':'Financial Engineering', cats:'Life with Cats', cv:'Curriculum Vitae'};
+  const titles = {about:'Cornell University', publications:'Publications', research:'Research', 'financial-engineering':'Financial Engineering', cats:'Life with Cats', cv:'Curriculum Vitae'};
   document.body.classList.add('enhanced');
   menu.hidden = false;
   document.querySelector('.subnav').hidden = false;

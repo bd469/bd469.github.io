@@ -29,3 +29,9 @@ A responsive, build-free academic portfolio hosted on GitHub Pages from the root
 Run `python3 -m http.server 8765` from this directory and open http://localhost:8765/.
 
 Commit and push changes to `main`. GitHub Pages publishes the repository root; no dependencies, package installation, or build step are required.
+
+## Search discovery
+
+The homepage has a descriptive title starting with Beixi Du, a canonical URL, crawlable HTML, and linked WebSite/ProfilePage/Person structured data. `robots.txt` allows crawling and advertises `sitemap.xml`.
+
+To submit to Google, add `https://bd469.github.io/` as a URL-prefix property in Google Search Console, verify ownership with the supplied HTML tag or file, submit `sitemap.xml`, and request indexing for the homepage. A Google account and its unique verification token are required; no verification token has been invented or added. Submission does not guarantee indexing or ranking.
