@@ -1,0 +1,80 @@
+<svg width="1200" height="800" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Belief-space MPC: cost decomposition</title>
+	<desc>Published double-integrator means over 10 trials at H=15. State and input cost components for Sep, Sep-MPC, and B-MPC. B-MPC lowers total cost by 38.8 percent against Sep in this setting. Source: Table 2, arXiv:2604.24663v1.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1200" height="800"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-800)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="1200" height="800" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="60" y="734" style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 36px;fill: rgb(12%,23%,37%); stroke:none;" transform="translate(0,1468) scale(1,-1)">Belief-space MPC</text>
+			<text x="862.1" y="735" style="font-family: Arial, Helvetica, sans-serif; font-size: 25px;fill: rgb(40%,47%,55%); stroke:none;" transform="translate(0,1470) scale(1,-1)">Planning with uncertainty</text>
+			<text x="60" y="677" style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 25px;fill: rgb(12%,23%,37%); stroke:none;" transform="translate(0,1354) scale(1,-1)">Double integrator</text>
+			<text x="831.192" y="677" style="font-family: Arial, Helvetica, sans-serif; font-size: 24px;fill: rgb(40%,47%,55%); stroke:none;" transform="translate(0,1354) scale(1,-1)">H = 15  ·  Mean over 10 trials</text>
+			<g transform="">
+				<path d="M 145,190 L 1140,190 Z" style="stroke: rgb(89%,91%,94%); stroke-linecap: butt; stroke-width: 1;"/>
+				<path d="M 145,290 L 1140,290 Z" style="stroke: rgb(89%,91%,94%); stroke-linecap: butt; stroke-width: 1;"/>
+				<path d="M 145,390 L 1140,390 Z" style="stroke: rgb(89%,91%,94%); stroke-linecap: butt; stroke-width: 1;"/>
+				<path d="M 145,490 L 1140,490 Z" style="stroke: rgb(89%,91%,94%); stroke-linecap: butt; stroke-width: 1;"/>
+				<path d="M 145,590 L 1140,590 Z" style="stroke: rgb(89%,91%,94%); stroke-linecap: butt; stroke-width: 1;"/>
+				<g transform="">
+					<rect x="227.91666666666669" y="190.0" width="165.83333333333331" height="350.48800000000006" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(23%,40%,58%); fill-rule: evenodd;"/>
+					<rect x="559.5833333333334" y="190.0" width="165.83333333333337" height="350.02" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(23%,40%,58%); fill-rule: evenodd;"/>
+					<rect x="891.25" y="190.0" width="165.83333333333326" height="169.05600000000004" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(23%,40%,58%); fill-rule: evenodd;"/>
+					<rect x="227.91666666666669" y="540.488" width="165.83333333333331" height="21.57199999999989" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,67%,39%); fill-rule: evenodd;"/>
+					<rect x="559.5833333333334" y="540.02" width="165.83333333333337" height="22.456000000000017" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,67%,39%); fill-rule: evenodd;"/>
+					<rect x="891.25" y="359.05600000000004" width="165.83333333333326" height="58.51999999999998" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,67%,39%); fill-rule: evenodd;"/>
+					<g transform=""/>
+				</g>
+				<g transform="">
+					<g transform="">
+						<path d="M 145,190 L 1140,190 Z" style="stroke: rgb(61%,67%,73%); stroke-linecap: butt; stroke-width: 1.2;"/>
+					</g>
+					<g transform=""/>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,310.833333,176)">
+							<text x="-24.906000000000002" y="-28.000000000000004" style="font-family: Arial, Helvetica, sans-serif; font-size: 28px;fill: rgb(12%,23%,37%); stroke:none;" transform="translate(0,-56) scale(1,-1)">Sep</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,642.5,176)">
+							<text x="-60.67600000000001" y="-28.000000000000004" style="font-family: Arial, Helvetica, sans-serif; font-size: 28px;fill: rgb(12%,23%,37%); stroke:none;" transform="translate(0,-56) scale(1,-1)">Sep-MPC</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,974.166667,176)">
+							<text x="-45.108" y="-28.000000000000004" style="font-family: Arial, Helvetica, sans-serif; font-size: 28px;fill: rgb(12%,23%,37%); stroke:none;" transform="translate(0,-56) scale(1,-1)">B-MPC</text>
+						</g>
+					</g>
+				</g>
+				<g transform="">
+					<g transform=""/>
+					<g transform=""/>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,131,190)">
+							<text x="-12.788" y="-9.200000000000001" style="font-family: Arial, Helvetica, sans-serif; font-size: 23px;fill: rgb(40%,47%,55%); stroke:none;" transform="translate(0,-18) scale(1,-1)">0</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,131,290)">
+							<text x="-38.364" y="-9.200000000000001" style="font-family: Arial, Helvetica, sans-serif; font-size: 23px;fill: rgb(40%,47%,55%); stroke:none;" transform="translate(0,-18) scale(1,-1)">250</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,131,390)">
+							<text x="-38.364" y="-9.200000000000001" style="font-family: Arial, Helvetica, sans-serif; font-size: 23px;fill: rgb(40%,47%,55%); stroke:none;" transform="translate(0,-18) scale(1,-1)">500</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,131,490)">
+							<text x="-38.364" y="-9.200000000000001" style="font-family: Arial, Helvetica, sans-serif; font-size: 23px;fill: rgb(40%,47%,55%); stroke:none;" transform="translate(0,-18) scale(1,-1)">750</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,131,590)">
+							<text x="-51.152" y="-9.200000000000001" style="font-family: Arial, Helvetica, sans-serif; font-size: 23px;fill: rgb(40%,47%,55%); stroke:none;" transform="translate(0,-18) scale(1,-1)">1000</text>
+						</g>
+					</g>
+				</g>
+			</g>
+			<text x="145" y="615" style="font-family: Arial, Helvetica, sans-serif; font-size: 23px;fill: rgb(40%,47%,55%); stroke:none;" transform="translate(0,1230) scale(1,-1)">Total cost</text>
+			<text x="274.5543333333334" y="578.06" style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 29px;fill: rgb(12%,23%,37%); stroke:none;" transform="translate(0,1156) scale(1,-1)">930.2</text>
+			<text x="606.221" y="578.48" style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 29px;fill: rgb(12%,23%,37%); stroke:none;" transform="translate(0,1156) scale(1,-1)">931.2</text>
+			<text x="937.8876666666666" y="433.576" style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 29px;fill: rgb(12%,23%,37%); stroke:none;" transform="translate(0,867) scale(1,-1)">568.9</text>
+			<rect x="145" y="89" width="22" height="22" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(23%,40%,58%); fill-rule: evenodd;"/>
+			<text x="181" y="91" style="font-family: Arial, Helvetica, sans-serif; font-size: 25px;fill: rgb(12%,23%,37%); stroke:none;" transform="translate(0,182) scale(1,-1)">State cost</text>
+			<rect x="370" y="89" width="22" height="22" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(83%,67%,39%); fill-rule: evenodd;"/>
+			<text x="406" y="91" style="font-family: Arial, Helvetica, sans-serif; font-size: 25px;fill: rgb(12%,23%,37%); stroke:none;" transform="translate(0,182) scale(1,-1)">Input cost</text>
+			<text x="826.56" y="91" style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 30px;fill: rgb(12%,23%,37%); stroke:none;" transform="translate(0,182) scale(1,-1)">38.8% lower total cost</text>
+			<text x="818.448" y="55" style="font-family: Arial, Helvetica, sans-serif; font-size: 22px;fill: rgb(40%,47%,55%); stroke:none;" transform="translate(0,110) scale(1,-1)">B-MPC versus Sep in this setting</text>
+		</g>
+	</g>
+</svg>
