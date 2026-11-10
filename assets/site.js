@@ -6,7 +6,7 @@
   const tabs = [...document.querySelectorAll('[data-view]')];
   const baseTitle = 'Beixi Du (Chloe)';
   const aliases = { resume: 'cv', education: 'cv', skills: 'cv', experience: 'financial-engineering', 'coinbase-project': 'financial-engineering' };
-  const titles = {about:'Cornell University', publications:'Publications', research:'Research', 'financial-engineering':'Financial Engineering', cats:'Life with Cats', cv:'Curriculum Vitae'};
+  const titles = {about:'Cornell & UCLA AIVC', publications:'Publications', research:'Research', 'financial-engineering':'Financial Engineering', cats:'Life with Cats', cv:'Curriculum Vitae'};
   document.body.classList.add('enhanced');
   menu.hidden = false;
   document.querySelector('.subnav').hidden = false;
@@ -22,8 +22,10 @@
     const route = aliases[raw] || (Object.hasOwn(titles, raw) ? raw : 'about');
     const sectionId = route === 'research' ? 'publications' : route;
     sections.forEach(section => { section.hidden = section.id !== sectionId; });
+    const activeHash = route === 'research' ? '#research' : '#' + sectionId;
+    document.getElementById('publications-title').textContent = route === 'research' ? 'Research' : 'Publications';
     navigation.querySelectorAll('a').forEach(link => {
-      if (link.hash === '#' + sectionId) link.setAttribute('aria-current', 'page');
+      if (link.hash === activeHash) link.setAttribute('aria-current', 'page');
       else link.removeAttribute('aria-current');
     });
     const view = route === 'research' ? 'research' : 'papers';

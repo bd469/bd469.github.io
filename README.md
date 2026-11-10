@@ -6,11 +6,11 @@ A responsive, build-free academic portfolio hosted on GitHub Pages from the root
 
 ## Content
 
-- **About:** biography and selected publications.
-- **Publications:** papers and a keyboard-accessible Research tab.
-- **Financial Engineering:** portfolio project, industry experience, and a Coinbase project preview.
+- **About:** Cornell and UCLA AIVC affiliations, biography, and selected publications.
+- **Publications / Research:** papers, current UCLA affiliation, and dated projects grouped by research advisor.
+- **Financial Engineering:** portfolio project, industry experience, and the Coinbase capstone.
 - **Life with Cats:** six photographs, including a foster cat, with an accessible enlarged-photo viewer.
-- **CV:** existing CV PDF, education, and skills.
+- **CV:** updated two-page CV PDF (November 2026), education, honors, and skills.
 
 `index.html` contains all page content, so the site remains readable with JavaScript disabled. Styling lives in `assets/styles.css`; navigation and gallery behavior live in `assets/site.js`. Section URLs use hashes (for example `/#publications`, `/#research`, and `/#cats`); browser Back/Forward and older section links remain supported.
 
@@ -18,10 +18,10 @@ A responsive, build-free academic portfolio hosted on GitHub Pages from the root
 
 - Add or edit paper entries in `index.html` under `#papers-panel`. Update selected entries under `#about` when appropriate. Keep author order, contribution notes, and publication status aligned with the manuscript.
 - The two uploaded PDFs are stored unchanged in `papers/retriever-free-retrieval.pdf` and `papers/the-prestige.pdf`.
-- Replace the text in `#coinbase-project` with the project description when available. No results, dates, affiliations, or project link have been invented; the available CV copies did not contain a Coinbase entry.
+- The Coinbase capstone description and research dates reflect the November 2026 CV. Update `#coinbase-project` and `#research-panel` when new results or roles are available.
 - Add finance projects as articles in `#financial-engineering`.
 - The five existing cat images remain at their original root paths. Optimized WebP copies in `assets/images/` are used in the gallery; clicking a photo opens the original in the viewer. The foster-cat photograph is preserved unchanged at `assets/images/foster-cat.png`. Update captions and alt text in `#cats` when changing images.
-- CV buttons use `cv_job.pdf`; `resume.pdf` remains available at its original URL. The CV file was not rewritten as part of the redesign.
+- CV buttons use `cv_job.pdf` with a dated cache-busting query; `resume.pdf` remains available at its original URL. Replace `cv_job.pdf` and update the query date when publishing a new CV.
 - Update `sitemap.xml` when making substantial changes.
 
 ## Preview and publish
