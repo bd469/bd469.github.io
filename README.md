@@ -11,7 +11,7 @@ A responsive, build-free academic portfolio hosted on GitHub Pages from the root
 - **Publications & Manuscripts:** three paper rows with figures, author credits, accurate publication/submission status, and links. One shared asterisk legend explains equal contribution.
 - **Industry Experience:** compact entries for the Coinbase capstone, Western Securities internship, and Huatai Securities internship. The capstone is explicitly labeled as a project, not employment, without “Cornell MFE.”
 - **CV:** the existing two-page PDF linked from the introduction; no separate CV section.
-- **Outside of Research:** six cat photographs, including a foster cat, with an accessible enlarged-photo viewer.
+- **Outside of Research:** six background-preserving photographs in square frames, including a foster cat, with an accessible enlarged-photo viewer. Clicking opens the complete photo without the square framing.
 
 `index.html` contains all content. Native section links work with JavaScript disabled. Styling lives in `assets/styles.css`; legacy hash compatibility and the gallery viewer live in `assets/site.js`. Section URLs use hashes (for example `/#publications`, `/#industry-experience`, and `/#cats`); older research links lead to publications, and older finance links lead to industry experience. Photos still open directly without JavaScript.
 
@@ -20,7 +20,7 @@ A responsive, build-free academic portfolio hosted on GitHub Pages from the root
 - Add or edit paper entries in `index.html` under `#publications`. There is only one canonical publication list. Keep author order, contribution notes, and publication status aligned with the manuscript.
 - The two uploaded PDFs are stored unchanged in `papers/retriever-free-retrieval.pdf` and `papers/the-prestige.pdf`.
 - The industry entries summarize the November 2026 record. Update `#industry-experience` and `#coinbase-project` when roles or dates change. Keep the capstone distinct from internships.
-- The five existing cat images remain at their original root paths. Optimized WebP copies in `assets/images/` are used in the gallery; clicking a photo opens the original in the viewer. The foster-cat photograph is preserved unchanged at `assets/images/foster-cat.png`. Update captions and alt text in `#cats` when changing images.
+- The first five photos use background-preserving WebP copies in `assets/images/cats/`, ordered as `lucky`, `ss`, `dd`, `tt`, and `xx`. Their complete frames are preserved; CSS applies square framing only in the gallery, while the viewer shows the complete photo. EXIF/XMP metadata is removed from these web copies. The older cutouts remain at their original URLs for compatibility but are not used in the gallery. The foster-cat source is preserved unchanged at `assets/images/foster-cat.png`. Update alt text in `#cats` when changing images; visible gallery captions remain omitted.
 - CV buttons use `cv_job.pdf` with a dated cache-busting query; `resume.pdf` remains available at its original URL. Replace `cv_job.pdf` and update the query date when publishing a new CV.
 - The unverified Cornell GPA is omitted from the HTML. The PDF itself has not been edited in this design change.
 - Update `sitemap.xml` when making substantial changes.

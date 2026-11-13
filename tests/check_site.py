@@ -19,6 +19,7 @@ class SiteParser(HTMLParser):
         self.cats = 0
         self.headings = 0
         self.industry_entries = 0
+        self.cat_links = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -34,6 +35,8 @@ class SiteParser(HTMLParser):
         classes = attrs.get('class', '').split()
         self.papers += 'publication-card' in classes
         self.cats += 'cat-photo' in classes
+        if 'cat-photo' in classes:
+            self.cat_links.append(attrs['href'])
         self.headings += tag == 'h1'
         self.industry_entries += 'industry-entry' in classes
 
@@ -58,6 +61,9 @@ assert not page.stack, f'Unclosed tags: {page.stack}'
 assert page.headings == 1, 'Expected exactly one h1'
 assert page.papers == 3, 'Expected all three publications'
 assert page.cats == 6, 'Expected all six cat photos'
+assert page.cat_links[:5] == [f'assets/images/cats/{name}-photo.webp' for name in ('lucky', 'ss', 'dd', 'tt', 'xx')], 'Use all five background-preserving photos in the original order'
+assert page.cat_links[5] == 'assets/images/foster-cat.png', 'Keep the foster-cat photo unchanged'
+assert '<figcaption>' not in html, 'Gallery captions should stay removed'
 assert page.industry_entries == 3, 'Expected two internships and one capstone'
 assert '<h1>Beixi (Chloe) Du</h1>' in html, 'Name should use one consistent type size'
 assert 'class="section-nav"' not in html, 'The content menu should stay removed'
