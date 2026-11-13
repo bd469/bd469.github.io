@@ -85,7 +85,7 @@ for paper_id in ('2610.35868', '2610.38103', '2604.24663'):
     assert publications.count(f'href="https://arxiv.org/abs/{paper_id}"') == 2, 'Each paper title and Paper link should lead to its arXiv record'
 assert '>Project Page</a>' in publications and '>Code</a>' in publications
 assert not list((ROOT / 'papers').glob('*.pdf')), 'Do not host paper PDFs on the website'
-assert 'href="cv_job.pdf?v=20261110"' in html, 'Retain the CV link'
+assert 'href="cv_job.pdf?v=20261113-arxiv"' in html, 'Link to the latest CV with its arXiv-only manuscript status'
 assert 'Cornell MFE' not in (ROOT / 'index.html').read_text()
 assert '<section id="cv"' not in (ROOT / 'index.html').read_text()
 assert '<section id="research"' not in (ROOT / 'index.html').read_text()

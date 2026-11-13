@@ -22,7 +22,7 @@ A responsive, build-free academic portfolio hosted on GitHub Pages from the root
 - The industry entries summarize the November 2026 record. Update `#industry-experience` and `#coinbase-project` when roles or dates change. Keep the capstone distinct from internships.
 - The first five photos use background-preserving WebP copies in `assets/images/cats/`, ordered as `lucky`, `ss`, `dd`, `tt`, and `xx`. Their complete frames are preserved; CSS applies square framing only in the gallery, while the viewer shows the complete photo. EXIF/XMP metadata is removed from these web copies. The older cutouts remain at their original URLs for compatibility but are not used in the gallery. The foster-cat source is preserved unchanged at `assets/images/foster-cat.png`. Update alt text in `#cats` when changing images; visible gallery captions remain omitted.
 - CV buttons use `cv_job.pdf` with a dated cache-busting query; `resume.pdf` remains available at its original URL. Replace `cv_job.pdf` and update the query date when publishing a new CV.
-- The unverified Cornell GPA is omitted from the HTML. The PDF itself has not been edited in this design change.
+- The unverified Cornell GPA is omitted from the HTML. On November 13, 2026, only the dual-control publication status in `cv_job.pdf` was changed to `arXiv preprint arXiv:2604.24663.`; all other CV text, formatting, pages, and links were preserved.
 - Update `sitemap.xml` when making substantial changes.
 
 ## Preview and publish
