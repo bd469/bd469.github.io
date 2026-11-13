@@ -71,10 +71,21 @@ assert html.count('class="research-intro"') == 1
 assert html.index('class="research-intro"') < html.index('id="news"'), 'Research interests belong in the introduction'
 assert 'Publications &amp; Manuscripts' in html
 assert html.count('Equal contribution') == 1, 'Keep one shared contribution legend'
+assert '* Equal contribution.</p>' in html
+assert 'within each paper' not in html
 assert 'class="contribution"' not in html, 'Remove repeated per-paper contribution notes'
 assert 'Department of Mathematics' not in html
 assert 'preprint' not in html.lower()
-assert 'Submitted to ACC 2027' in html, 'Preserve the submitted, not accepted, status'
+assert 'Submitted to' not in html and 'ACC 2027' not in html, 'Do not display pending submission venues'
+assert html.count('<span>arXiv · 2026</span>') == 2, 'Show the public arXiv status of both manuscripts'
+publications = html.split('<section id="publications"', 1)[1].split('</section>', 1)[0]
+assert '.pdf' not in publications.lower() and '>PDF<' not in publications, 'Paper entries must link to external landing pages, not PDFs'
+assert publications.count('>Paper</a>') == 3
+for paper_id in ('2610.35868', '2610.38103', '2604.24663'):
+    assert publications.count(f'href="https://arxiv.org/abs/{paper_id}"') == 2, 'Each paper title and Paper link should lead to its arXiv record'
+assert '>Project Page</a>' in publications and '>Code</a>' in publications
+assert not list((ROOT / 'papers').glob('*.pdf')), 'Do not host paper PDFs on the website'
+assert 'href="cv_job.pdf?v=20261110"' in html, 'Retain the CV link'
 assert 'Cornell MFE' not in (ROOT / 'index.html').read_text()
 assert '<section id="cv"' not in (ROOT / 'index.html').read_text()
 assert '<section id="research"' not in (ROOT / 'index.html').read_text()

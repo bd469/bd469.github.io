@@ -8,7 +8,7 @@ A responsive, build-free academic portfolio hosted on GitHub Pages from the root
 
 - **Introduction:** portrait, Cornell and UCLA AIVC affiliations, biography, research interests, and contact links. The name uses a consistent type size; there is no separate content menu.
 - **News:** dated research updates already supported by the existing record.
-- **Publications & Manuscripts:** three paper rows with figures, author credits, accurate publication/submission status, and links. One shared asterisk legend explains equal contribution.
+- **Publications & Manuscripts:** three paper rows with figures, author credits, public publication/arXiv status, and external links. Pending submission venues are not displayed. One shared asterisk legend explains equal contribution.
 - **Industry Experience:** compact entries for the Coinbase capstone, Western Securities internship, and Huatai Securities internship. The capstone is explicitly labeled as a project, not employment, without “Cornell MFE.”
 - **CV:** the existing two-page PDF linked from the introduction; no separate CV section.
 - **Outside of Research:** six background-preserving photographs in square frames, including a foster cat, with an accessible enlarged-photo viewer. Clicking opens the complete photo without the square framing.
@@ -18,7 +18,7 @@ A responsive, build-free academic portfolio hosted on GitHub Pages from the root
 ## Updating content
 
 - Add or edit paper entries in `index.html` under `#publications`. There is only one canonical publication list. Keep author order, contribution notes, and publication status aligned with the manuscript.
-- The two uploaded PDFs are stored unchanged in `papers/retriever-free-retrieval.pdf` and `papers/the-prestige.pdf`.
+- Do not host paper PDFs in this website. Paper titles and the `Paper` links lead to external arXiv abstract pages; The Prestige also has `Project Page` and `Code` links. The former self-hosted paper PDFs were removed on November 13, 2026; this removal does not erase earlier Git history. Keep CV PDFs separate from paper assets.
 - The industry entries summarize the November 2026 record. Update `#industry-experience` and `#coinbase-project` when roles or dates change. Keep the capstone distinct from internships.
 - The first five photos use background-preserving WebP copies in `assets/images/cats/`, ordered as `lucky`, `ss`, `dd`, `tt`, and `xx`. Their complete frames are preserved; CSS applies square framing only in the gallery, while the viewer shows the complete photo. EXIF/XMP metadata is removed from these web copies. The older cutouts remain at their original URLs for compatibility but are not used in the gallery. The foster-cat source is preserved unchanged at `assets/images/foster-cat.png`. Update alt text in `#cats` when changing images; visible gallery captions remain omitted.
 - CV buttons use `cv_job.pdf` with a dated cache-busting query; `resume.pdf` remains available at its original URL. Replace `cv_job.pdf` and update the query date when publishing a new CV.
