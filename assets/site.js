@@ -1,91 +1,31 @@
 (() => {
   'use strict';
-  const sections = [...document.querySelectorAll('.page-section')];
-  const navigation = document.querySelector('.primary-nav');
-  const menu = document.querySelector('.menu-toggle');
-  const tabs = [...document.querySelectorAll('[data-view]')];
-  const baseTitle = 'Beixi Du (Chloe)';
-  const aliases = { resume: 'cv', education: 'cv', skills: 'cv', experience: 'financial-engineering', 'coinbase-project': 'financial-engineering' };
-  const titles = {about:'Cornell & UCLA AIVC', publications:'Publications', research:'Research', 'financial-engineering':'Financial Engineering', cats:'Life with Cats', cv:'Curriculum Vitae'};
-  document.body.classList.add('enhanced');
-  menu.hidden = false;
-  document.querySelector('.subnav').hidden = false;
-  document.querySelectorAll('.subpanel').forEach(panel => panel.setAttribute('role', 'tabpanel'));
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  function closeMenu() {
-    navigation.classList.remove('is-open');
-    menu.setAttribute('aria-expanded', 'false');
-  }
-  function showPage({ focus = false } = {}) {
-    const raw = location.hash.slice(1);
-    const route = aliases[raw] || (Object.hasOwn(titles, raw) ? raw : 'about');
-    const sectionId = route === 'research' ? 'publications' : route;
-    sections.forEach(section => { section.hidden = section.id !== sectionId; });
-    const activeHash = route === 'research' ? '#research' : '#' + sectionId;
-    document.getElementById('publications-title').textContent = route === 'research' ? 'Research' : 'Publications';
-    navigation.querySelectorAll('a').forEach(link => {
-      if (link.hash === activeHash) link.setAttribute('aria-current', 'page');
-      else link.removeAttribute('aria-current');
-    });
-    const view = route === 'research' ? 'research' : 'papers';
-    tabs.forEach(tab => {
-      const selected = tab.dataset.view === view;
-      tab.setAttribute('aria-selected', String(selected));
-      tab.tabIndex = selected ? 0 : -1;
-      document.getElementById(tab.getAttribute('aria-controls')).hidden = !selected;
-    });
-    document.title = `${baseTitle} | ${titles[route]}`;
-    closeMenu();
-    if (focus) {
-      document.getElementById(sectionId).querySelector('.page-title').focus({ preventScroll: true });
-      window.scrollTo({top: 0, behavior: 'instant'});
+  // Keep old inbound links working without replacing native page navigation.
+  const aliases = {
+    resume: 'cv', education: 'cv', skills: 'cv',
+    experience: 'industry-experience', 'financial-engineering': 'industry-experience',
+    research: 'publications', 'papers-panel': 'publications', 'research-panel': 'publications'
+  };
+  function revealHashTarget() {
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const target = document.getElementById(aliases[id] || id);
+    if (!target) return;
+    let ancestor = target.parentElement;
+    let expanded = false;
+    while (ancestor) {
+      if (ancestor.tagName === 'DETAILS' && !ancestor.open) {
+        ancestor.open = true;
+        expanded = true;
+      }
+      ancestor = ancestor.parentElement;
     }
+    if (aliases[id] || expanded) target.scrollIntoView({ block: 'start' });
   }
-  function navigate(hash, { focus = true } = {}) {
-    if (location.hash !== hash) history.pushState(null, '', hash);
-    showPage({focus});
-  }
-  document.addEventListener('click', event => {
-    const link = event.target.closest('a[href^="#"]');
-    if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    const route = link.hash.slice(1);
-    if (route === 'main') {
-      event.preventDefault();
-      document.getElementById('main').focus();
-      return;
-    }
-    if (!Object.hasOwn(titles, route) && !Object.hasOwn(aliases, route)) return;
-    event.preventDefault();
-    navigate(link.hash);
-  });
-  menu.addEventListener('click', () => {
-    const open = menu.getAttribute('aria-expanded') !== 'true';
-    menu.setAttribute('aria-expanded', String(open));
-    navigation.classList.toggle('is-open', open);
-  });
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && navigation.classList.contains('is-open')) { closeMenu(); menu.focus(); }
-  });
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => {
-      navigate(tab.dataset.view === 'research' ? '#research' : '#publications', { focus: false });
-      tab.focus();
-    });
-    tab.addEventListener('keydown', event => {
-      let next;
-      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-      if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
-      if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = tabs.length - 1;
-      if (next === undefined) return;
-      event.preventDefault();
-      tabs[next].click();
-    });
-  });
-  window.addEventListener('popstate', () => showPage());
-  window.addEventListener('hashchange', () => showPage());
-  showPage();
+  window.addEventListener('hashchange', revealHashTarget);
+  revealHashTarget();
 
   const dialog = document.getElementById('cat-dialog');
   const photos = [...document.querySelectorAll('.cat-photo')];
