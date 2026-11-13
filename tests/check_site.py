@@ -50,7 +50,8 @@ class SiteParser(HTMLParser):
 
 
 page = SiteParser()
-page.feed((ROOT / 'index.html').read_text())
+html = (ROOT / 'index.html').read_text()
+page.feed(html)
 page.close()
 assert not page.errors, '\n'.join(page.errors)
 assert not page.stack, f'Unclosed tags: {page.stack}'
@@ -58,6 +59,16 @@ assert page.headings == 1, 'Expected exactly one h1'
 assert page.papers == 3, 'Expected all three publications'
 assert page.cats == 6, 'Expected all six cat photos'
 assert page.industry_entries == 3, 'Expected two internships and one capstone'
+assert '<h1>Beixi (Chloe) Du</h1>' in html, 'Name should use one consistent type size'
+assert 'class="section-nav"' not in html, 'The content menu should stay removed'
+assert html.count('class="research-intro"') == 1
+assert html.index('class="research-intro"') < html.index('id="news"'), 'Research interests belong in the introduction'
+assert 'Publications &amp; Manuscripts' in html
+assert html.count('Equal contribution') == 1, 'Keep one shared contribution legend'
+assert 'class="contribution"' not in html, 'Remove repeated per-paper contribution notes'
+assert 'Department of Mathematics' not in html
+assert 'preprint' not in html.lower()
+assert 'Submitted to ACC 2027' in html, 'Preserve the submitted, not accepted, status'
 assert 'Cornell MFE' not in (ROOT / 'index.html').read_text()
 assert '<section id="cv"' not in (ROOT / 'index.html').read_text()
 assert '<section id="research"' not in (ROOT / 'index.html').read_text()

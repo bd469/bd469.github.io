@@ -6,9 +6,9 @@ A responsive, build-free academic portfolio hosted on GitHub Pages from the root
 
 ## Content
 
-- **Introduction:** portrait, Cornell and UCLA AIVC affiliations, biography, and contact links.
+- **Introduction:** portrait, Cornell and UCLA AIVC affiliations, biography, research interests, and contact links. The name uses a consistent type size; there is no separate content menu.
 - **News:** dated research updates already supported by the existing record.
-- **Research:** three publication rows with figures, author credits, status, and links.
+- **Publications & Manuscripts:** three paper rows with figures, author credits, accurate publication/submission status, and links. One shared asterisk legend explains equal contribution.
 - **Industry Experience:** compact entries for the Coinbase capstone, Western Securities internship, and Huatai Securities internship. The capstone is explicitly labeled as a project, not employment, without “Cornell MFE.”
 - **CV:** the existing two-page PDF linked from the introduction; no separate CV section.
 - **Outside of Research:** six cat photographs, including a foster cat, with an accessible enlarged-photo viewer.
